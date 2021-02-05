@@ -1,0 +1,19 @@
+mok-sidebox{
+    display:block;
+    transition: all 360ms ease-in-out 10ms;
+}
+
+
+[Ui\:Sidebox\:Area="Float"]:not([Side="Right"]){ left: 0px; }
+[Ui\:Sidebox\:Area="Float"][Side="Right"]{ right: 0px; }
+
+[Ui\:Sidebox\:Area="Float"]{
+    position: fixed;
+    top:0px;
+    width:90vw;
+    max-width:768px;
+    height: 100vh;
+    z-index: 900;
+    background-color: #282828;
+    color: #999999;
+}

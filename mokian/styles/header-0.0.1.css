@@ -1,0 +1,174 @@
+
+/* HeaderBox */
+mok-header{
+    background-color: var(--Color-Layer);
+    color: var(--Color-Text);
+    z-index: 20;
+    height: var(--Ui-Header-Size);
+    display:flex;
+    border-width: 0px;
+    border-style: solid;
+    border-color: var(--Color-Layer-Lite);
+}
+
+mok-header[Ui\:Fixed]{ position:fixed; }
+
+mok-header img{
+    height: calc(var(--Ui-Header-Size) - .4rem);
+    width:auto;
+}
+
+
+mok-header [Ui\:Section="Header:Begin"]:not(:empty)
+, mok-header [Ui\:Section="Header:End"]:not(:empty)
+{
+    display: flex;
+}
+
+mok-header [Ui\:Section="Header:Begin"] > *
+, mok-header [Ui\:Section="Header:End"] > *
+{
+    margin:.4rem .8rem;
+}
+
+mok-header[Position="Above"] [Ui\:Section="Header:Begin"]
+, mok-header[Position="Below"] [Ui\:Section="Header:Begin"]
+, mok-header[Position="Above"] [Ui\:Section="Header:End"]
+, mok-header[Position="Below"] [Ui\:Section="Header:End"]
+{
+    flex-direction: row;
+    align-items: center;
+}
+
+mok-header[Position="Left"] [Ui\:Section="Header:Begin"]
+, mok-header[Position="Right"] [Ui\:Section="Header:Begin"]
+, mok-header[Position="Left"] [Ui\:Section="Header:End"]
+, mok-header[Position="Right"] [Ui\:Section="Header:End"]
+{
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Sections */
+
+mok-header [Ui\:Section="Header:TitleBar"]{
+    flex: 1 auto;
+    font-size: 1.1rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: blue; */
+}
+
+mok-header[Position="Below"]{ border-top-width: 1px; }
+mok-header[Position="Above"]{ border-bottom-width: 1px; padding-top: var(--Ui-SafeArea-Top); }
+mok-header[Position="Left"]{ border-right-width: 1px; }
+mok-header[Position="Right"]{ border-right-width: 1px; }
+
+
+
+mok-header[Position="Below"] [Ui\:Section="Header:TitleBar"]
+, mok-header[Position="Above"] [Ui\:Section="Header:TitleBar"]
+{
+    transform: rotate(0deg);
+    flex-direction: row;
+}
+
+/* mok-header[Position="Left"] [Ui\:Section="Header:TitleBar"]
+, mok-header[Position="Right"] [Ui\:Section="Header:TitleBar"]
+{
+    flex-direction: column;
+} */
+
+mok-header[Position="Left"] [Ui\:Section="Header:TitleBar"] *
+, mok-header[Position="Right"] [Ui\:Section="Header:TitleBar"] *
+{
+    transform: rotate(90deg);
+}
+
+mok-header [Ui\:Section="Header:Title"]
+{
+    display: flex;
+    flex-direction: inherit;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem 1rem;
+}
+
+
+
+/* Positionnement / Debut */
+
+mok-header[Position="Below"]
+, mok-header[Position="Above"]
+{
+    width:100vw;
+    left:0px;
+    max-height: var(--Ui-Header-Size);
+    flex-direction:row;
+}
+
+mok-header[Position="Above"]{
+    top:0px;
+}
+
+mok-header[Position="Below"]{
+    bottom:0px;
+}
+
+
+mok-header[Position="Left"]
+, mok-header[Position="Right"]
+{
+    height:100vh;
+    top:0px;
+    max-width: var(--Ui-Header-Size);
+    flex-direction:column;
+}
+
+
+mok-header[Position="Left"]{
+    left:0px;
+}
+
+mok-header[Position="Right"]{
+    right:0px;
+}
+
+/* Positionnement / Fin */
+
+
+
+/* Alignement / Debut */
+
+mok-header[Position="Left"] + mok-menu[Position="Left"] { left: var(--Ui-Header-Size); }
+
+mok-header[Position="Right"] + mok-menu[Position="Right"] { right: var(--Ui-Header-Size); }
+
+mok-header[Position="Above"] + mok-menu[Position="Above"] { top: var(--Ui-Header-Size); }
+
+    mok-header[Position="Above"] + mok-menu[Position="Left"] 
+    , mok-header[Position="Above"] + mok-menu[Position="Right"] 
+    { 
+        padding-top: var(--Ui-Header-Size);
+    }
+
+mok-header[Position="Below"] + mok-menu[Position="Below"] { bottom: var(--Ui-Header-Size); }
+
+    mok-header[Position="Below"] + mok-menu[Position="Left"] 
+    , mok-header[Position="Below"] + mok-menu[Position="Right"] 
+    { 
+        padding-bottom: var(--Ui-Header-Size); 
+    }
+
+
+
+mok-header[Position="Above"] + mok-menu[Position="Left"] 
+, mok-header[Position="Above"] + mok-menu[Position="Right"] 
+, mok-header[Position="Below"] + mok-menu[Position="Left"] 
+, mok-header[Position="Below"] + mok-menu[Position="Right"] 
+{ 
+    height: calc(100vh - var(--Ui-Header-Size));
+}
+
+/* Alignement / Fin */

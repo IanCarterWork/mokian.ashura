@@ -1,0 +1,120 @@
+
+:root{
+
+    --Ui-Radius-Lite: .4rem;
+    
+    --Ui-Radius: 1rem;
+
+    --Ui-Radius-High: 3rem;
+
+    
+    --Ui-Header-Size: 48px;
+
+    --Ui-Menu-Size: 48px;
+
+    --Ui-Menu-Item-Size: 48px;
+
+    --FontSize : 12px;
+
+    --FontFamilyLight : "Open Sans";
+
+    --FontFamilyRegular : "Open Sans";
+
+    --FontFamilyBold : "Open Sans";
+
+    --FontFamilyBold : "Open Sans";
+
+    transition: all 360ms ease;
+
+}
+
+
+/* mok-menu{
+    box-shadow: 0px 0px 10px rgba(0,0,0,.50);
+} */
+
+
+/* Input : Checkbox */
+
+input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    width:40px;
+    height:20px;
+    background-color: var(--Color-Layer-High);
+    border: 1px solid var(--Color-Layer-High);
+    border-radius: 3rem;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    align-items: center;
+    transition: all ease 250ms;
+}
+
+input[type="checkbox"]:disabled{
+    filter: grayscale(5);
+    opacity:.5;
+}
+
+input[type="checkbox"]:checked{
+    /* justify-content: flex-end; */
+    background-color: var(--Color-One);
+    border-color: var(--Color-One);
+}
+
+input[type="checkbox"]::after{
+    display: block;
+    content:"";
+    width: 50%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: var(--Color-Layer-Lite);
+    transition: all ease 250ms;
+    position: absolute;
+    left:0px;
+    top:0px;
+}
+
+input[type="checkbox"]:checked::after{
+    background-color: var(--Color-White);
+    border-color: var(--Color-One);
+    left:50%;
+}
+
+
+
+
+
+/* Input : Radio */
+
+input[type="radio"]{
+    appearance: none;
+    width:20px;
+    height:20px;
+    background-color: transparent;
+    border: 2px solid var(--Color-Text);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="radio"]:checked{
+    border-color: var(--Color-One);
+}
+
+input[type="radio"]::after{
+    content:"";
+    width: 0%;
+    height: 0%;
+    background-color: transparent;
+    transition: all ease 100ms;
+}
+
+input[type="radio"]:checked::after{
+    display: block;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: inherit;
+    background-color: var(--Color-One);
+    border-color: var(--Color-One);
+}

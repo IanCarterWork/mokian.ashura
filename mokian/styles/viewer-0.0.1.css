@@ -1,0 +1,24 @@
+
+mok-view{
+    display: block;
+    max-width: 100vw;
+    width: 100vw;
+}
+
+
+mok-menu[Position="Above"] + mok-screen 
+{ margin-top: var(--Ui-Menu-Size); }
+
+mok-menu[Position="Below"] + mok-screen 
+{ margin-bottom: var(--Ui-Menu-Size); }
+
+
+mok-menu[Position="Left"] + mok-screen 
+{ margin-left: var(--Ui-Menu-Size); }
+
+mok-menu[Position="Right"] + mok-screen 
+{ margin-right: var(--Ui-Menu-Size); }
+
+mok-header + mok-menu + mok-screen 
+{ padding-top: var(--Ui-Header-Size); }
+

@@ -1,0 +1,34 @@
+
+
+[Layout\:List]{
+    display:flex;
+    flex-direction: column;
+    padding:0px 1rem;
+}
+
+[Layout\:List] [List\:Item]{
+    background-color: var(--Color-Layer-Lite);
+    color: var(--Color-Text);
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgba(0,0,0,.08);
+    /* border-top-width: 1px; */
+    border-bottom-width: 1px;
+    
+}
+
+[Layout\:List] [List\:Item]:first-of-type{
+    border-top-width: 0px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+[Layout\:List] [List\:Item]:last-of-type{
+    border-bottom-width: 0px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+[Layout\:List] [List\:Item] [Item\:Content]{
+    padding:.5rem 1rem;
+}

@@ -1,0 +1,110 @@
+
+mok-dialbox{
+    display: block;
+    background-color: var(--Color-Layer);
+    border-radius:var(--Ui-Radius);
+    opacity: 1;
+    transition: all 360ms ease;
+}
+
+mok-dialbox[status="Close"]{
+    opacity: .001;
+    transform: translateY(50%);
+}
+
+
+mok-dialbox [DialBox\:Header]
+{
+    display: flex;
+    flex-direction: row;
+}
+
+mok-dialbox [DialBox\:Header] [DialBox\:Icon]{
+    padding: .8rem 1rem;
+}
+
+mok-dialbox [DialBox\:Header] [DialBox\:TitleBar]{
+    padding: .8rem 1rem;
+    flex: 1 auto;
+}
+
+mok-dialbox [DialBox\:Header] [DialBox\:Icon] + [DialBox\:TitleBar] {
+    padding-left: 0px;
+}
+
+mok-dialbox [DialBox\:Header] [DialBox\:Control]{
+    padding: .8rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+mok-dialbox [DialBox\:Control] [Control\:Item]{
+    padding:4px;
+}
+
+mok-dialbox [DialBox\:Control] [Control\:Close]{
+    border-radius: 100%;
+    background-color: var(--Color-Error);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+mok-dialbox [DialBox\:Control] [Control\:Maximize]{
+    border-radius: 100%;
+    background-color: transparent;
+    border: 1px solid var(--Color-Text);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+mok-dialbox [DialBox\:Control] [Control\:Minimize]{
+    background-color: transparent;
+    border: 0 solid var(--Color-Text);
+    border-bottom-width: 1px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+
+
+mok-dialbox[Ui\:State="Maximize"]{
+    width: calc(100vw - 16px) !important;
+    height: calc(100vh - 16px) !important;
+}
+
+
+
+
+mok-dialbox[Ui\:State="Minimize"]{
+    width: 64px !important;
+    height: 64px !important;
+    overflow: hidden;
+}
+
+mok-dialbox[Ui\:State="Minimize"] > *:not([DialBox\:Header])
+, mok-dialbox[Ui\:State="Minimize"] [DialBox\:Header] > *:not([DialBox\:Icon])
+{
+    display:none;
+}
+
+mok-dialbox[Ui\:State="Minimize"] [DialBox\:Header]{
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* mok-dialbox[Ui\:State="Minimize"] [DialBox\:Header] [DialBox\:Icon]{
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */

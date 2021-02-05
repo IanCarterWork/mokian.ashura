@@ -1,0 +1,416 @@
+[Fx\:Reveal]:not([Fx\:Reveal=":true"]){ opacity:0; }
+
+[Fx\:Reveal=":true"]{ opacity:initial; }
+
+[Fx\:Properties]{ 
+    transition-property: all;
+    transition-duration: 360ms;
+    transition-timing-function: ease;
+ }
+
+
+[Fx\:Preset]{ 
+    animation-duration: 360ms;
+    animation-timing-function: ease;
+}
+
+[Fx\:Preset=":shake.x"]{ animation-name: fx-shake-x; }
+[Fx\:Preset=":shake.y"]{ animation-name: fx-shake-y; }
+[Fx\:Preset=":shake.3d"]{ animation-name: fx-shake-3d; }
+
+[Fx\:Preset=":fade.in"]{ animation-name: fx-fade-in; }
+[Fx\:Preset=":fade.out"]{ animation-name: fx-fade-out; }
+
+[Fx\:Preset=":fade.blurred.in"]{ animation-name: fx-fade-blurred-in; }
+[Fx\:Preset=":fade.blurred.out"]{ animation-name: fx-fade-blurred-out; }
+
+[Fx\:Preset=":blur.in"]{ animation-name: fx-blur-in; }
+[Fx\:Preset=":blur.out"]{ animation-name: fx-blur-out; }
+
+[Fx\:Preset=":slide.left.in"]{ animation-name: fx-slide-left-in; }
+[Fx\:Preset=":slide.left.out"]{ animation-name: fx-slide-left-out; }
+
+[Fx\:Preset=":slide.top.in"]{ animation-name: fx-slide-top-in; }
+[Fx\:Preset=":slide.top.out"]{ animation-name: fx-slide-top-out; }
+
+[Fx\:Preset=":slide.down.in"]{ animation-name: fx-slide-down-in; }
+[Fx\:Preset=":slide.down.out"]{ animation-name: fx-slide-down-out; }
+
+[Fx\:Preset=":slide.right.in"]{ animation-name: fx-slide-right-in; }
+[Fx\:Preset=":slide.right.out"]{ animation-name: fx-slide-right-out; }
+
+[Fx\:Preset=":zoom.in"]{ animation-name: fx-zoom-in; }
+[Fx\:Preset=":zoom.out"]{ animation-name: fx-zoom-out; }
+
+
+[Fx\:Iteration]{ animation-iteration-count: initial; }
+[Fx\:Iteration=":infinite"]{ animation-iteration-count: infinite; }
+[Fx\:Iteration="x2"]{ animation-iteration-count: 2; }
+[Fx\:Iteration="x3"]{ animation-iteration-count: 3; }
+[Fx\:Iteration="x4"]{ animation-iteration-count: 4; }
+[Fx\:Iteration="x5"]{ animation-iteration-count: 5; }
+[Fx\:Iteration="x6"]{ animation-iteration-count: 6; }
+[Fx\:Iteration="x7"]{ animation-iteration-count: 7; }
+[Fx\:Iteration="x8"]{ animation-iteration-count: 8; }
+[Fx\:Iteration="x9"]{ animation-iteration-count: 9; }
+[Fx\:Iteration="x10"]{ animation-iteration-count: 10; }
+
+
+
+
+
+ /* Vibration */
+ 
+@keyframes fx-shake-x{
+
+    10%, 90% { transform: translateX(-1px); }
+    
+    20%, 80% { transform: translateX(2px) }
+  
+    30%, 50%, 70% { transform: translateX(-4px); }
+  
+    40%, 60% { transform: translateX(4px); }
+
+}
+ 
+@keyframes fx-shake-y{
+
+    10%, 90% { transform: translateY(-1px); }
+    
+    20%, 80% { transform: translateY(2px); }
+
+    30%, 50%, 70% { transform: translateY(-4px); }
+  
+    40%, 60% { transform: translateY(4px); }
+    
+}
+ 
+@keyframes fx-shake-3d{
+    
+    10%, 90% { transform: translate3d(-1px, 3px, 0); }
+    
+    20%, 80% { transform: translate3d(2px, 7px, 8px); }
+
+    30%, 50%, 70% { transform: translate3d(-4px, 5px, 20px); }
+
+    40%, 60% { transform: translate3d(4px, 1px, 16px); }
+
+}
+ 
+
+
+
+/* Fondu */
+
+@keyframes fx-fade-in{
+
+    0%{
+        opacity:0.00;
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    
+}
+
+@keyframes fx-fade-out{
+
+    0%{
+        opacity:1;
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    
+}
+
+
+
+
+/* Fondu Floutter */
+
+@keyframes fx-fade-blurred-in{
+
+    0%{
+        opacity:0.00;
+        filter:blur(0px);
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        filter:blur(5px);
+    }
+    
+}
+
+@keyframes fx-fade-blurred-out{
+
+    0%{
+        opacity:1;
+        filter:blur(5px);
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        filter:blur(0px);
+    }
+    
+}
+
+
+
+
+/* Flou */
+
+@keyframes fx-blur-in{
+
+    0%{
+        filter:blur(0px);
+    }
+
+    90%{
+        filter:blur(5px);
+    }
+
+    
+}
+
+@keyframes fx-blur-out{
+
+    0%{
+        filter:blur(5px);
+    }
+
+    90%{
+        filter:blur(0px);
+    }
+
+    
+}
+
+
+
+/* Glissement à gauche */
+
+@keyframes fx-slide-left-in{
+
+    0%{
+        transform: translateX(-50%);
+        opacity:0.00;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform: translateX(0%);
+        /* filter:blur(3px); */
+    }
+    
+}
+
+@keyframes fx-slide-left-out{
+
+    0%{
+        transform: translateX(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        transform: translateX(-50%);
+        opacity:0;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+
+
+/* Glissement en haut */
+
+@keyframes fx-slide-top-in{
+
+    0%{
+        transform: translateY(-50%);
+        opacity:0.00;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform: translateY(0%);
+        /* filter:blur(3px); */
+    }
+    
+}
+
+@keyframes fx-slide-top-out{
+
+    0%{
+        transform: translateY(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        transform: translateY(50%);
+        opacity:0;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+
+
+/* Glissement à droite */
+
+@keyframes fx-slide-right-in{
+
+    0%{
+        transform: translateX(100%);
+        opacity:0.00;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+@keyframes fx-slide-right-out{
+
+    0%{
+        transform: translateX(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        transform: translateX(100%);
+        opacity:0;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+
+
+/* Glissement en bas */
+
+@keyframes fx-slide-down-in{
+
+    0%{
+        transform: translateY(100%);
+        opacity:0.00;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform: translateY(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+@keyframes fx-slide-down-out{
+
+    0%{
+        transform: translateY(0%);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        transform: translateY(100%);
+        opacity:0;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+
+/* ZOOM */
+
+@keyframes fx-zoom-in{
+
+    0%{
+        transform: scale(.8);
+        opacity:0.00;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:1;
+    }
+
+    100%{
+        transform: scale(1);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+    
+}
+
+@keyframes fx-zoom-out{
+
+    0%{
+        transform: scale(1);
+        opacity:1;
+        /* filter:blur(3px); */
+    }
+
+    90%{
+        opacity:0;
+    }
+
+    100%{
+        transform: scale(.8);
+        opacity:0;
+        /* filter:blur(3px); */
+    }
+    
+}

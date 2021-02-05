@@ -1,0 +1,183 @@
+mok-input{
+    display:flex;
+    background-color: var(--Color-Layer-Lite);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--Color-Layer-Lite);
+    min-height:32px;
+    min-width: 256px;
+    border-radius: 3rem;
+}
+
+mok-input label{
+    display: block;
+    cursor: pointer;
+}
+
+mok-input:focus-within {
+    border-color: var(--Color-Layer-High);
+}
+
+mok-input [Input\:Container]{
+    flex: 1 auto;
+}
+
+mok-input [Input\:Glyph]
+, mok-input [Input\:Actions]
+{
+    padding: .8rem;
+    font-size: .8rem;
+}
+
+mok-input [Input\:Actions]:empty{
+    width:1rem !important;
+    padding:0px !important;
+}
+
+mok-input [Input\:Action]{
+    cursor: pointer;
+    margin:0px .2rem;
+}
+
+mok-input [Input\:Content] {
+    position: relative;
+    flex: 1 auto;
+    display: flex;
+    align-items: center;
+}
+
+mok-input [Input\:Content] > * {
+    transition: all 280ms ease;
+}
+
+
+
+mok-input [Input\:Label]
+, mok-input [Input\:Label] *
+{
+    opacity: .75;
+}
+
+mok-input:focus-within [Input\:Label]
+, mok-input:focus-within [Input\:Label] *
+{
+    opacity: .9;
+}
+
+mok-input [Input\:Field] *
+, mok-input [Input\:Label] *
+{
+    font-size: inherit;
+    color: var(--Color-Text);
+    background-color: transparent;
+    border-width: 0px;
+    border-style: solid;
+    width: 100%;
+}
+
+
+
+/* Static / Debut */
+
+mok-input [Input\:Field="Static"] 
+, mok-input[Ui\:Fully] [Input\:Field="Static"] 
+{
+    margin: .5rem;
+}
+
+mok-input [Input\:Label="Static"] 
+, mok-input[Ui\:Fully] [Input\:Label="Static"] 
+{
+    margin: .3rem;
+    flex: 1 auto;
+}
+
+/* Static / Fin */
+
+
+
+/* Float / Debut */
+
+mok-input [Input\:Field="Float"]
+, mok-input [Input\:Label="Float"]
+{
+    position: absolute;
+    top:0px; left:0px;
+    /* height: 100%; */
+    width:100%;
+    padding:.8rem 0;
+}
+
+mok-input [Input\:Field="Float"] 
+, mok-input[Ui\:Fully] [Input\:Field="Float"] 
+{
+    /* background-color: red; */
+    z-index: 0;
+}
+
+
+mok-input [Input\:Label="Float"] 
+, mok-input[Ui\:Fully] [Input\:Label="Float"] 
+{
+    z-index: 1;
+    padding:.5rem 0;
+}
+
+mok-input:focus-within [Input\:Field="Float"] *
+, mok-input[Ui\:Fully] [Input\:Field="Float"] *
+{
+    outline: none;
+    margin-top:4px;
+}
+
+mok-input:focus-within [Input\:Label="Float"]
+, mok-input[Ui\:Fully] [Input\:Label="Float"]
+{
+    font-size:.7rem;
+    padding:.1rem 0;
+}
+
+mok-input:focus-within [Input\:Field="Float"] 
+, mok-input[Ui\:Fully] [Input\:Field="Float"] 
+{
+    z-index:2;
+}
+/* Float / FIN */
+
+
+mok-input + mok-input{
+    border-color: var(--Color-Layer);
+}
+
+
+[Input\:FieldSet]{
+    width: calc( inherit - 1rem );
+    padding: .5rem;
+}
+
+[Input\:FieldSet] mok-input{
+    border-width: 0;
+    border-radius: 0rem;
+    width: 100%;
+    border-color: var(--Color-Layer);
+}
+
+[Input\:FieldSet] mok-input:first-of-type{
+    border-top-left-radius: .8rem;
+    border-top-right-radius: .8rem;
+}
+
+[Input\:FieldSet] mok-input:last-of-type{
+    border-bottom-left-radius: .8rem;
+    border-bottom-right-radius: .8rem;
+} 
+
+[Input\:FieldSet] mok-input{
+    border-bottom-width: 1px;
+} 
+
+[Input\:FieldSet] mok-input:last-of-type{
+    border-bottom-width: 0px;
+} 
+
+

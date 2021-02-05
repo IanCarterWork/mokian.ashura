@@ -1,0 +1,107 @@
+
+button{
+    color: var(--Color-Text);
+    background-color: var(--Color-Layer-Lite);
+    border-radius: 3rem;
+    border-style: solid;
+    border-width: thin;
+    border-color: transparent;
+    padding:.8rem 1rem;
+    transition: all 360ms ease;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+button mok-glyph{
+    padding-left:.2rem;
+    padding-right:.2rem;
+}
+
+button :not(mok-glyph){
+    flex: 1 auto;
+}
+
+button:focus-within{
+    outline: none;
+}
+
+button:focus-within
+, button:hover
+{
+    border-color: var(--Color-Text);
+}
+
+
+button[type="submit"]
+, [Button\:Actived]
+{
+    color: var(--Color-White);
+    background-color: var(--Color-Three);
+}
+
+button[type="submit"]:focus-within
+, [Button\:Actived]:focus-within
+, button[type="submit"]:hover
+, [Button\:Actived]:hover
+{
+    border-color: var(--Color-One);
+}
+
+
+[Button\:Set]{
+    margin:.4rem;
+    display: flex;
+}
+
+[Button\:Set="Row"]{
+    flex-direction:row;
+    justify-content: stretch;
+}
+
+[Button\:Set="Row"] button {
+    margin-left: .4rem;
+    margin-right: .4rem;
+}
+
+
+[Button\:Set="Row"] button:first-of-type {
+    margin-left: 0rem;
+}
+
+[Button\:Set="Row"] button:last-of-type {
+    margin-right: 0rem;
+} 
+
+
+[Button\:Set="Row"] button[type="submit"]
+, [Button\:Set="Row"] [Button\:Actived]
+{
+    flex: 1 auto;
+}
+
+@media (max-width:480px){
+
+    [Button\:Set="Row"]{
+        flex-direction:column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    [Button\:Set="Row"] button {
+        width: calc(100% - .8rem);
+        margin-top: .4rem;
+        margin-bottom: .4rem;
+    }
+    
+    [Button\:Set="Row"] button:first-of-type {
+        margin-left: .4rem;
+    }
+
+    [Button\:Set="Row"] button:last-of-type {
+        margin-right: .4rem;
+    } 
+
+
+}
+

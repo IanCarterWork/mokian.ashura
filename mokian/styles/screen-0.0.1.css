@@ -1,0 +1,7 @@
+
+/* View : Screen */
+
+mok-screen{
+    display: block;
+    min-height: 100vh;
+}

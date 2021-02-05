@@ -1,0 +1,248 @@
+
+/* MenuBox */
+
+mok-menu{
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,.50); */
+    background-color: var(--Color-Layer);
+    z-index: 10;
+    border-width: 0px;
+    border-style: solid;
+    border-color: var(--Color-Layer-Lite);
+    display: block !important;
+}
+
+mok-menu[Ui\:Fixed]{ position:fixed; }
+
+
+mok-menu[Position="Above"]{ border-bottom-width: 1px; padding-top: var(--Ui-SafeArea-Top); }
+mok-menu[Position="Below"]{ border-top-width: 1px; padding-bottom: var(--Ui-SafeArea-Bottom); }
+mok-menu[Position="Left"]{ border-right-width: 1px; }
+mok-menu[Position="Right"]{ border-right-width: 1px; }
+
+mok-menu > a {
+    display:none;
+}
+
+mok-menu, mok-menu > *{
+    color: var(--Color-Text);
+}
+
+mok-menu a{
+    text-decoration: none;
+    color: var(--Color-Text);
+}
+
+mok-menu[Position="Below"]
+, mok-menu[Position="Above"]
+{
+    width:100vw;
+    left:0px;
+    /* min-height: var(--Ui-Menu-Size); */
+}
+
+mok-menu[Position="Above"]{
+    top:0px;
+}
+
+mok-menu[Position="Below"]{
+    bottom:0px;
+}
+
+
+mok-menu[Position="Left"]
+, mok-menu[Position="Right"]
+{
+    height:100vh;
+    top:0px;
+    min-width: var(--Ui-Menu-Size);
+}
+
+
+mok-menu[Position="Left"]{
+    left:0px;
+}
+
+mok-menu[Position="Right"]{
+    right:0px;
+}
+
+
+mok-menu [MenuBox\:Items]{
+    padding:16px;
+}
+
+
+mok-menu [MenuBox\:Navigation]{
+    display: flex;
+    /* min-width: 320px; */
+    align-items: center;
+    justify-content: center;
+    /* width:100%; height:100%; */
+    flex: 1 auto;
+}
+
+mok-menu [MenuBox\:Navigation][MenuBox\:Max]{
+    justify-content: flex-start;
+}
+
+
+mok-menu[Position="Below"] [MenuBox\:Navigation]
+, mok-menu[Position="Above"] [MenuBox\:Navigation]
+{
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+mok-menu[Position="Left"] [MenuBox\:Navigation]
+, mok-menu[Position="Right"] [MenuBox\:Navigation]
+{
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-items: stretch;
+}
+
+
+@media (max-width:280px){
+
+    mok-menu[Position="Below"] [MenuBox\:Navigation]
+    , mok-menu[Position="Above"] [MenuBox\:Navigation]
+    {
+        justify-content: flex-start;
+    }
+    
+}
+
+mok-menu [MenuBox\:Item]{
+    /* flex: 1 auto; */
+    padding: .4rem .8rem;
+    display: flex;
+    /* width: 100%; */
+    justify-content: center;
+    align-items: center;
+}
+
+
+mok-menu [MenuBox\:Item]:focus
+, mok-menu [MenuBox\:Item]:hover
+,mok-menu [MenuBox\:Item="Actived"]
+{
+    background-color: var(--Color-One);
+    color: var(--Color-White);
+}
+
+mok-menu [MenuBox\:Item]:hover
+{
+    background-color: var(--Color-Layer-Lite);
+    color: var(--Color-Text);
+
+}
+
+mok-menu[Position="Above"] [MenuBox\:Item]
+, mok-menu[Position="Below"] [MenuBox\:Item]
+{
+    width: var(--Ui-Menu-Item-Size);
+}
+
+mok-menu[Position="Left"] [MenuBox\:Item]
+, mok-menu[Position="Right"] [MenuBox\:Item]
+{
+    height: calc(var(--Ui-Menu-Size) / 2);
+}
+
+
+mok-menu [MenuBox\:Item] [MenuBox\:Glyph]{
+    font-size: .8rem;
+}
+
+mok-menu [MenuBox\:Item] [MenuBox\:Label]{
+    font-size:.8rem;
+    max-width: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+mok-menu[Position="Above"] [MenuBox\:Label]
+, mok-menu[Position="Below"] [MenuBox\:Label]
+{
+    padding-top:4px;
+    /* padding-bottom:8px; */
+}
+
+mok-menu[Position="Left"] [MenuBox\:Label]
+, mok-menu[Position="Right"] [MenuBox\:Label]
+{
+    padding-left:12px;
+    padding-right:12px;
+    display: none;
+}
+
+
+mok-menu[Position="Left"]:hover [MenuBox\:Label]
+, mok-menu[Position="Right"]:hover [MenuBox\:Label]
+{
+    display: block;
+}
+
+
+
+mok-menu[Position="Below"] [MenuBox\:Navigation] [MenuBox\:Item]
+, mok-menu[Position="Above"] [MenuBox\:Navigation] [MenuBox\:Item]
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+mok-menu[Position="Left"] [MenuBox\:Navigation] [MenuBox\:Item]
+, mok-menu[Position="Right"] [MenuBox\:Navigation] [MenuBox\:Item]
+{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+mok-menu[Position="Left"]:hover [MenuBox\:Item]
+{
+    justify-content: flex-start;
+}
+
+/* Mode Plein écran */
+
+:root[Mokian\:Fullscreen] mok-menu[Position="Bottom"]{
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+mok-menu [MenuBox\:Item]
+, mok-menu [MenuBox\:Item] *
+{
+    transition: all 300ms ease-in;
+}
+
+
+
+
+/* mok-menu[Position="Below"] + mok-view{
+    padding-bottom: calc(var(--Ui-Menu-Size) )  !important;
+}
+
+mok-menu[Position="Above"] + mok-view{
+    padding-top: calc(var(--Ui-Menu-Size) )  !important;
+} */
+
+/* 
+mok-header[Position="Above"] + mok-menu[Position="Below"] + mok-view
+, mok-header[Position="Above"] + mok-menu[Position="Above"] + mok-view
+, mok-header[Position="Below"] + mok-menu[Position="Above"] + mok-view
+, mok-header[Position="Below"] + mok-menu[Position="Below"] + mok-view
+{
+    padding-top: calc( var(--Ui-Menu-Size) + var(--Ui-Header-Size) )  !important;
+    padding-bottom: calc( var(--Ui-Menu-Size) + var(--Ui-Header-Size) )  !important;
+    height: calc( 100vh - var(--Ui-Menu-Size) - var(--Ui-Header-Size) ) !important;
+} */
+
